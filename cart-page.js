@@ -93,6 +93,10 @@ function checkout() {
     }, 4000);
 }
 
+function instantCheckout(){
+    localStorage.removeItem('comicverse-cart');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     renderCartPage();
 });
