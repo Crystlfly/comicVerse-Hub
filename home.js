@@ -50,7 +50,7 @@ function updateSlideContent(slide, comic) {
             <p class="carousel-description">${comic.description}</p>
             <div class="carousel-actions">
                 <a href="comic-detail.html?id=${comic.id}" class="btn btn-primary">View Details</a>
-                <button class="btn btn-secondary">Learn More</button>
+                <a href="comic-detail.html?id=${comic.id}" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
     `;
