@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Comic Details - ComicVerse Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="images/icon.png" class="logo-icon" alt="ComicVerse Logo">
+                    <span class="logo-text">ComicVerse Hub</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="browse.html" class="nav-link">Browse Comics</a>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="9" cy="21" r="1"></circle>
+                          <circle cx="20" cy="21" r="1"></circle>
+                          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                      </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="mobile-menu-btn">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="browse.html" class="mobile-link">Browse Comics</a>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-nav">
+        <div class="container">
+            <a href="browse.html" class="back-link">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Browse
+            </a>
+        </div>
+    </div>
+
+    <!-- Comic Detail -->
+    <main class="detail-page">
+        <div class="container">
+            <div class="detail-grid">
+                <!-- Left Column - Image -->
+                <div class="detail-image-col">
+                    <div class="comic-image-wrapper" id="comic-image-wrapper">
+                        <img id="comic-image" src="" alt="" class="comic-image">
+                        <div class="zoom-hint">Click image to zoom</div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Details -->
+                <div class="detail-info-col">
+                    <div id="comic-badges" class="detail-badges"></div>
+                    
+                    <h1 id="comic-title" class="detail-title"></h1>
+                    
+                    <div class="detail-price">
+                        <span id="comic-price" class="price-large"></span>
+                        <span class="price-label">Per Issue</span>
+                    </div>
+
+                    <div class="detail-section">
+                        <h2 class="detail-section-title">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                              <polyline points="14 2 14 8 20 8"></polyline>
+                              <line x1="16" y1="13" x2="8" y2="13"></line>
+                              <line x1="16" y1="17" x2="8" y2="17"></line>
+                          </svg>
+                            Synopsis
+                        </h2>
+                        <p id="comic-description" class="detail-description"></p>
+                    </div>
+
+                    <div class="creators-box">
+                        <h2 class="detail-section-title">Creators</h2>
+                        <div class="creators-list">
+                            <div class="creator-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <span class="creator-label">Writer:</span>
+                                <span id="comic-writer"></span>
+                            </div>
+                            <div class="creator-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e7000b" class="bi bi-brush" viewBox="0 0 16 16">
+                                  <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z"/>
+                                </svg>
+                                <span class="creator-label">Artist:</span>
+                                <span id="comic-artist"></span>
+                            </div>
+                            <div class="creator-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#e7000b" class="bi bi-palette" viewBox="0 0 16 16">
+                                  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                                  <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+                                </svg>
+                                <span class="creator-label">Colorist:</span>
+                                <span id="comic-colorist"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                          </svg>
+                            <div>
+                                <div class="info-label">Pages</div>
+                                <div id="comic-pages" class="info-value"></div>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                              <line x1="16" y1="2" x2="16" y2="6"></line>
+                              <line x1="8" y1="2" x2="8" y2="6"></line>
+                              <line x1="3" y1="10" x2="21" y2="10"></line>
+                          </svg>
+                            <div>
+                                <div class="info-label">Release Date</div>
+                                <div id="comic-date" class="info-value"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-to-cart-box">
+                        <div class="quantity-selector">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="decrementQty()">-</button>
+                                <span id="quantity">1</span>
+                                <button class="qty-btn" onclick="incrementQty()">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-add-cart" onclick="addToCartFromDetail()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <circle cx="9" cy="21" r="1"></circle>
+                              <circle cx="20" cy="21" r="1"></circle>
+                              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                          </svg>
+                            <span id="add-cart-text">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Comics -->
+            <div id="related-section" class="related-section">
+                <h2 class="section-title">You May Also Like</h2>
+                <div id="related-grid" class="comic-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About ComicVerse</h3>
+                    <p>Your premier destination for comics from all major publishers. Discover epic stories and legendary characters.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="browse.html">New Releases</a></li>
+                        <li><a href="browse.html">Best Sellers</a></li>
+                        <li><a href="browse.html">Sale Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Publishers</h3>
+                    <ul>
+                        <li><a href="browse.html">Marvel Comics</a></li>
+                        <li><a href="browse.html">DC Comics</a></li>
+                        <li><a href="browse.html">Image Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.479l8.6-9.83L0 1.154h7.59l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.44 3.25H4.298l13.312 17.394Z"/>
+                        </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81z"/>
+                              <path d="M9.5 8.5L15.5 12l-6 3.5V8.5z"/>
+                          </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ComicVerse Hub. All rights reserved. This is a portfolio demonstration project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="comics-data.js"></script>
+    <script src="cart.js"></script>
+    <script src="comic-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Browse Comics - ComicVerse Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="images/icon.png" class="logo-icon" alt="ComicVerse Logo">
+                    <span class="logo-text">ComicVerse Hub</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="browse.html" class="nav-link active">Browse Comics</a>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="9" cy="21" r="1"></circle>
+                          <circle cx="20" cy="21" r="1"></circle>
+                          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                      </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="mobile-menu-btn">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="browse.html" class="mobile-link active">Browse Comics</a>
+        </div>
+    </nav>
+
+    <!-- Browse Content -->
+    <main class="browse-page">
+        <div class="container">
+            <!-- Header -->
+            <div class="page-header">
+                <h1>Browse All Comics</h1>
+                <p>Explore our complete collection of <span id="total-comics">0</span> comics</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-panel">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16L14 14v6h-4v-6L4 4z"></path>
+                            </svg>
+                            Publisher
+                        </label>
+                        <select id="publisher-filter">
+                            <option value="all">All Publishers</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16L14 14v6h-4v-6L4 4z"></path>
+                            </svg>
+                            Genre
+                        </label>
+                        <select id="genre-filter">
+                            <option value="all">All Genres</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16L14 14v6h-4v-6L4 4z"></path>
+                            </svg>
+                            Character
+                        </label>
+                        <select id="character-filter">
+                            <option value="all">All Characters</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16L14 14v6h-4v-6L4 4z"></path>
+                            </svg>
+                            Sort By
+                        </label>
+                        <select id="sort-select">
+                            <option value="title-asc">Title (A-Z)</option>
+                            <option value="title-desc">Title (Z-A)</option>
+                            <option value="price-asc">Price (Low to High)</option>
+                            <option value="price-desc">Price (High to Low)</option>
+                            <option value="date-newest">Release Date (Newest)</option>
+                            <option value="date-oldest">Release Date (Oldest)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="active-filters" class="active-filters"></div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-count">
+                <p>Showing <span id="results-count">0</span> comics</p>
+            </div>
+
+            <!-- Comics Grid -->
+            <div class="comic-grid" id="browse-grid"></div>
+
+            <!-- No Results -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>No comics found matching your filters.</p>
+                <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About ComicVerse</h3>
+                    <p>Your premier destination for comics from all major publishers. Discover epic stories and legendary characters.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="browse.html">New Releases</a></li>
+                        <li><a href="browse.html">Best Sellers</a></li>
+                        <li><a href="browse.html">Sale Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Publishers</h3>
+                    <ul>
+                        <li><a href="browse.html">Marvel Comics</a></li>
+                        <li><a href="browse.html">DC Comics</a></li>
+                        <li><a href="browse.html">Image Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.479l8.6-9.83L0 1.154h7.59l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.44 3.25H4.298l13.312 17.394Z"/>
+                        </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81z"/>
+                              <path d="M9.5 8.5L15.5 12l-6 3.5V8.5z"/>
+                          </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ComicVerse Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="comics-data.js"></script>
+    <script src="cart.js"></script>
+    <script src="browse.js"></script>
+</body>
+</html>
